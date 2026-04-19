@@ -9,11 +9,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-interface ThemeProviderProps {
-  children: React.ReactNode;
-}
-
-const ThemeProvider = ({ children }: ThemeProviderProps) => {
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") {
       return "light";

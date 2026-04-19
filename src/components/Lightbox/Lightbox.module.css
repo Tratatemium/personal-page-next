@@ -20,6 +20,7 @@
   max-width: 90vw;
   max-height: 80vh;
   display: block;
+  object-fit: contain;
   border-radius: 0.5em;
 }
 

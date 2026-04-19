@@ -1,24 +1,27 @@
 import styles from "./Gallery.module.css";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+
+import { useLightboxContext } from "@/context/LightboxContext";
 
 interface ImageType {
-  src: string;
+  src: StaticImageData;
   alt: string;
   caption: string;
 }
 
 interface GalleryProps {
   images: ImageType[];
-  openLightbox: (images: ImageType[], index: number) => void;
 }
 
-function Gallery({ images, openLightbox }: GalleryProps) {
+function Gallery({ images }: GalleryProps) {
+  const { openLightbox } = useLightboxContext();
+
   return (
     <div className={styles.gallery}>
       {images.map((img, index) => (
         <Image
-          key={img.src}
+          key={img.src.src}
           src={img.src}
           alt={img.alt}
           data-caption={img.caption}
