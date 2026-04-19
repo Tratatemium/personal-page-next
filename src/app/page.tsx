@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 
 import { MyPhoto } from "@/components/MyPhoto";
 
-function Home({ PhotoComponent = MyPhoto }) {
+export default function Home({ PhotoComponent = MyPhoto }) {
   const skills = ["{", "HTML", "CSS", "TypeScript", "React", "Next.js", "}"];
 
   return (
@@ -62,5 +62,3 @@ function Home({ PhotoComponent = MyPhoto }) {
     </>
   );
 }
-
-export { Home };

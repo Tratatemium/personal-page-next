@@ -1,22 +1,14 @@
-import styles from "./layout.module.css";
-
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import "../styles/reset.css";
 import "../styles/variables.css";
 import "../styles/global.css";
 
-import { usePathname } from "next/navigation";
-
-import { Providers } from "./providers";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { SkipLink } from "@/components/SkipLink";
+import ClientLayout from "./clientLayout";
 
 const firaSans = Fira_Sans({
   variable: "--font-fira-sans",
-  weight: "500",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -30,26 +22,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-  const isAboutPage = pathname === "/about";
-
   return (
     <html lang="en" className={`${firaSans.variable}`}>
       <body>
-        <Providers>
-          <div className={styles.app}>
-            <SkipLink mainId={"main"} />
-            <ThemeToggle />
-            <main
-              className={`${styles.content} ${isAboutPage ? styles.aboutContent : ""}`}
-              id="main"
-            >
-              <Navbar />
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

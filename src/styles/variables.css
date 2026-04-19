@@ -1,5 +1,7 @@
 :root {
 
+  --main-font: var(--font-fira-sans), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
   --background-img: url(../assets/background.png);
   --background-color: #e7dfdc;
   --main-color: #2d2d2d;

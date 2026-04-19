@@ -239,6 +239,7 @@
 
 .skills span {
   opacity: 0;
+  white-space: pre;
   transform: translateY(calc((1 - var(--i)) * 1em));
   animation-name: skills-down, skills-appear;
   animation-duration:
