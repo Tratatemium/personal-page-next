@@ -1,0 +1,124 @@
+.wraper {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  text-shadow: 2px 2px 2px rgb(from var(--accent-color-1) r g b / 0.6);
+}
+
+.myPhoto {
+  grid-row: 2;
+  grid-column: 1;
+  transform: translateX(var(--curtain-center-distance));
+  animation:
+    curtain-cloud-about var(--animation-speed-curtain) var(--delay-about-me)
+      backwards,
+    appear-about var(--animation-speed-curtain) var(--delay-about-me) backwards;
+}
+
+@keyframes curtain-cloud-about {
+  from {
+    transform: translate(25vw, 0);
+  }
+  to {
+    transform: translate(var(--curtain-center-distance));
+  }
+}
+
+.text {
+  grid-row: 2;
+  grid-column: 2;
+  padding: 8em;
+  transform: translateX(calc(-1 * var(--curtain-center-distance)));
+  animation:
+    curtain-photo-about var(--animation-speed-curtain) var(--delay-about-me)
+      backwards,
+    appear-about var(--animation-speed-curtain) var(--delay-about-me) backwards;
+}
+
+.text p {
+  margin-top: 0.6em;
+}
+
+@keyframes curtain-photo-about {
+  from {
+    transform: translateX(-25vw);
+  }
+  to {
+    transform: translate(calc(-1 * var(--curtain-center-distance)));
+  }
+}
+
+@keyframes appear-about {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .title {
+    grid-area: title;
+  }
+
+  .myPhoto {
+    grid-area: img;
+    justify-self: center;
+    transform: translateY(-40%);
+  }
+
+  @keyframes curtain-cloud-about {
+    from {
+      transform: translateY(-40%) scale(0.7);
+    }
+    to {
+      transform: translateY(-40%) scale(1);
+    }
+  }
+
+  .text {
+    grid-area: text;
+    font-size: 1.2em;
+    padding: 2em 8em 2em 8em;
+    transform: translateX(0);
+  }
+
+  @keyframes curtain-photo-about {
+    from {
+      transform: translateX(0) scale(0.8);
+    }
+    to {
+      transform: translateX(0) scale(1);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    order: 2;
+    width: fit-content;
+    margin: 1em auto 1em auto;
+  }
+
+  .myPhoto {
+    transform: translateY(0);
+    order: 3;
+  }
+
+  @keyframes curtain-cloud-about {
+    from {
+      transform: translateY(0) scale(0.7);
+    }
+    to {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .text {
+    order: 4;
+    padding: 2em 5em 2em 5em;
+  }
+}
