@@ -166,12 +166,12 @@ function useLightbox() {
   useFocusTrap({ containerRef, isOpen: lightbox.isOpen });
 
   return {
-    lightbox,
-    openLightbox,
-    closeLightbox,
-    goToNext,
-    goToPrev,
     containerRef,
+    ...lightbox,
+    openLightbox,
+    onClose: closeLightbox,
+    onNext: goToNext,
+    onPrev: goToPrev,
   };
 }
 

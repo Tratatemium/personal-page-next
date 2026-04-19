@@ -49,4 +49,4 @@ function Lightbox({
   );
 }
 
-export default Lightbox;
+export { Lightbox };
