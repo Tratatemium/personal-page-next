@@ -1,66 +1,66 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+import { MyPhoto } from "@/components/MyPhoto";
+
+function Home({ PhotoComponent = MyPhoto }) {
+  const skills = ["{", "HTML", "CSS", "TypeScript", "React", "Next.js", "}"];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <section className={styles.wordCloud}>
+        <p className={styles.myName}>
+          <span>
+            &lt;Vladislav
+            <br />
+          </span>
+          <span>Zhuravskii&gt;</span>
+        </p>
+        <p className={styles.occupation}>
+          <span className={styles.line1}>
+            a{" "}
+            <span className="accent-color-1">&lt;Front-end Developer&gt;</span>
+            <br />
+          </span>
+          <span className={styles.line2}>student</span>
+        </p>
+
+        <p className={styles.hello}>Hi! I am</p>
+
+        <p className={`${styles.skills} accent-color-2`}>
+          {skills.map((skill, i) => (
+            <span key={i} style={{ "--i": i + 1 } as React.CSSProperties}>
+              {skill === "{" || skill === "}" ? skill : `    ${skill}`}
+              <br />
+            </span>
+          ))}
+        </p>
+
+        <p className={`${styles.hobbies1} accent-color-3`}>
+          <span>
+            # a cook
+            <br />
+          </span>
+          <span>
+            # a coder
+            <br />
+          </span>
+        </p>
+
+        <p className={`${styles.hobbies2} accent-color-3`}>
+          <span>
+            # a woodworker
+            <br />
+          </span>
+          <span>
+            # a gamer
+            <br />
+          </span>
+        </p>
+      </section>
+
+      <PhotoComponent className={styles.myPhoto} />
+    </>
   );
 }
+
+export { Home };
