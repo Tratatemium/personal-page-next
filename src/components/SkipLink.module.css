@@ -1,0 +1,14 @@
+.skipLink {
+  position: absolute;
+  left: 8em;
+  top: -4em;
+  z-index: 99;
+  color: var(--main-color);
+  transition: 0.2s ease-in;
+}
+
+.skipLink:focus-within {
+  top: 2em;
+  color: var(--accent-color-1);
+  font-weight: bolder;
+}
