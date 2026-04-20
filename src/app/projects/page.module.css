@@ -8,12 +8,16 @@
   font-weight: bold;
 }
 
-.linksGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.content {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-auto-rows: auto;
   align-items: center;
-  gap: 1em;
+  justify-content: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  gap: 10em;
 }
 
 .links {
@@ -24,20 +28,12 @@
   font-size: 1.2em;
 }
 
-.linksGroup .links {
-  margin-top: 0;
-}
-
-
-
 .projectSeparator {
   color: var(--accent-color-2);
 }
 
-@media(max-width: 1100px) {
-
+@media (max-width: 1100px) {
 }
 
-@media(max-width: 600px) {
-
+@media (max-width: 600px) {
 }
