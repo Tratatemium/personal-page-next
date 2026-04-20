@@ -22,7 +22,7 @@ const POSTS_QUERY = `*[_type == "post"]
       "links": coalesce(links[]{href, text, svgType}, [])
     }
   `;
-const options = { next: { revalidate: 30 } };
+const options = { next: { revalidate: 3600 } };
 
 async function Projects() {
   const projects = await client.fetch<Project[]>(POSTS_QUERY, {}, options);
