@@ -1,0 +1,68 @@
+.toggle {
+  position: fixed;
+  left: 2em;
+  z-index: 99;
+}
+
+.checkbox {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.label {
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  border: var(--accent-color-1) 2px solid;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-primary);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.checkbox:checked + .label {
+  border-color: var(--accent-color-2);
+}
+
+.label:hover {
+  transform: scale(1.1);
+}
+
+.sun,
+.moon {
+  width: 70%;
+  height: 70%;
+  z-index: 100;
+}
+
+.sun {
+  fill: transparent;
+  stroke: var(--accent-color-1);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.moon {
+  display: none;
+}
+
+.checkbox:checked + .label .sun {
+  display: none;
+}
+
+.checkbox:checked + .label .moon {
+  display: block;
+  fill: var(--accent-color-2);
+}
+
+@media (max-width: 600px) {
+  .toggle {
+    position: relative;
+    left: 0;
+    margin: 0 auto;
+  }
+}

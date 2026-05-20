@@ -1,0 +1,60 @@
+html {
+  font-size: clamp(0.2rem, 0.5rem + 0.5vw, 2rem);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-surface-primary);
+  font-family: var(--main-font);
+  color: var(--color-foreground-primary);
+  display: grid;
+
+  background-image: var(--background-img);
+  background-size: 70%;
+
+  background-position: center top;
+  background-repeat: repeat;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.accent-color-1 {
+  color: var(--accent-color-1);
+}
+
+.accent-color-2 {
+  color: var(--accent-color-2);
+}
+
+.accent-color-3 {
+  color: var(--accent-color-3);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: center;
+  font-size: 3em;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: clamp(0.4rem, 0.4rem + 0.5vw, 2rem);
+  }
+}

@@ -1,0 +1,433 @@
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.myPhoto {
+  grid-area: img;
+  transform: translateX(calc(-1 * var(--curtain-center-distance)));
+  animation:
+    curtain-photo var(--animation-speed-curtain) var(--delay-curtain) backwards,
+    element-appear var(--animation-speed-curtain) var(--delay-curtain) backwards;
+}
+
+.wordCloud {
+  grid-area: cloud;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "skills hello"
+    "name name"
+    "occup occup"
+    "hobbies-2 hobbies-1";
+
+  width: fit-content;
+  height: fit-content;
+
+  margin: 2em;
+
+  gap: 0;
+
+  transform: translateX(var(--curtain-center-distance)) rotate(-45deg);
+  font-size: 1.2rem;
+
+  animation: curtain-cloud var(--animation-speed-curtain) var(--delay-curtain)
+    backwards;
+}
+
+@keyframes curtain-cloud {
+  from {
+    transform: translate(25vw, 0) rotate(-45deg);
+  }
+  to {
+    transform: translate(var(--curtain-center-distance), 0) rotate(-45deg);
+  }
+}
+
+@keyframes curtain-photo {
+  from {
+    transform: translate(-25vw, 0);
+  }
+}
+
+@keyframes element-appear {
+  from {
+    opacity: 0;
+  }
+}
+
+/* #region ========  INTRODUCTION  ======== */
+
+.hello {
+  grid-area: hello;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+
+  transform: rotate(90deg) translate(80%, 20%);
+  transform-origin: bottom right;
+
+  font-size: 2.4em;
+
+  animation: rotate-hello var(--animation-speed-rotation) var(--delay-rotation)
+    var(--animation-function-rotate) backwards;
+}
+
+@keyframes rotate-hello {
+  from {
+    transform-origin: 100% 84%;
+    transform: rotate(45deg) translate(57%, 110%);
+  }
+}
+
+.myName {
+  display: block;
+  grid-area: name;
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+
+  font-weight: bold;
+  font-size: 4em;
+  line-height: 1em;
+
+  animation: rotate-name var(--animation-speed-rotation) var(--delay-rotation)
+    var(--animation-function-rotate) backwards;
+}
+
+@keyframes rotate-name {
+  from {
+    transform: rotate(45deg) translate(0%, 0%);
+    transform-origin: 60% 0%;
+  }
+}
+
+.myName span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.myName span:nth-child(2) {
+  padding-left: 3.5ch;
+}
+/* #endregion */
+
+/* #region ========   OCCUPATION   ======== */
+
+.occupation {
+  grid-area: occup;
+  width: 23ch;
+  height: fit-content;
+  justify-self: end;
+  align-self: end;
+  margin: 0;
+
+  transform: translate(8%, 0);
+
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1em;
+  font-family: "Fira Mono", monospace;
+}
+
+.occupation .line1 {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    typing-line-1 calc(23 * var(--animation-speed-typewriter)) steps(23)
+      var(--delay-typewriter) backwards,
+    caret-line-1 calc(23 * var(--animation-speed-typewriter)) steps(23)
+      var(--delay-typewriter) backwards;
+}
+
+.occupation .line2 {
+  display: inline-block;
+  padding-right: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 8ch;
+  animation:
+    typing-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7)
+      calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter))
+      backwards,
+    caret-line-2 calc(7 * var(--animation-speed-typewriter)) steps(7)
+      calc(23 * var(--animation-speed-typewriter) + var(--delay-typewriter))
+      backwards,
+    blinking-caret calc(7 * var(--animation-speed-typewriter)) steps(1, start)
+      calc(30 * var(--animation-speed-typewriter) + var(--delay-typewriter))
+      infinite;
+}
+
+@keyframes typing-line-1 {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 23ch;
+  }
+}
+@keyframes caret-line-1 {
+  0% {
+    border-right: var(--caret) transparent;
+  }
+  1% {
+    border-right: var(--caret) var(--color-foreground-primary);
+  }
+  13% {
+    border-right: var(--caret) var(--accent-color-1);
+  }
+  100% {
+    border-right: var(--caret) var(--accent-color-1);
+  }
+}
+
+@keyframes typing-line-2 {
+  from {
+    width: 8ch;
+  }
+  to {
+    width: 15ch;
+  }
+}
+@keyframes caret-line-2 {
+  0% {
+    border-right: var(--caret) transparent;
+  }
+  1% {
+    border-right: var(--caret) var(--color-foreground-primary);
+  }
+  100% {
+    border-right: var(--caret) var(--color-foreground-primary);
+  }
+}
+
+@keyframes blinking-caret {
+  50% {
+    border-right: var(--caret) var(--color-foreground-primary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter {
+    animation: none;
+    border-right: none;
+  }
+}
+
+/* #endregion OCCUPATION*/
+
+/* #region ========     SKILLS     ======== */
+
+.skills {
+  grid-area: skills;
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+
+  font-size: 1.3em;
+  line-height: 1em;
+
+  transform: rotate(90deg) translate(-20%, -5%);
+  transform-origin: bottom right;
+
+  margin: 0;
+}
+
+.skills span {
+  opacity: 0;
+  white-space: pre;
+  transform: translateY(calc((1 - var(--i)) * 1em));
+  animation-name: skills-down, skills-appear;
+  animation-duration:
+    calc(var(--i) * var(--animation-speed-skills)),
+    calc(1 * var(--animation-speed-skills));
+  animation-delay:
+    calc(var(--delay-skills) + (8 - var(--i)) * var(--animation-speed-skills)),
+    calc(var(--delay-skills) + (8 - var(--i)) * var(--animation-speed-skills));
+  animation-fill-mode: forwards, forwards;
+  animation-timing-function: var(--animation-function-skills);
+}
+
+.skills span:nth-child(1) {
+  transform: translateX(2em);
+  animation-name: skills-down, skills-appear;
+  animation-duration: calc(1 * var(--animation-speed-skills));
+  animation-delay: var(--delay-skills);
+  animation-fill-mode: forwards;
+}
+
+@keyframes skills-down {
+  to {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes skills-appear {
+  to {
+    opacity: 1;
+  }
+}
+
+/* #endregion SKILLS*/
+
+/* #region ========    HOBBIES     ======== */
+.hobbies1 {
+  grid-area: hobbies-1;
+  transform: rotate(90deg);
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 0;
+
+  font-size: 1em;
+  line-height: 1em;
+
+  opacity: 0;
+  transform: rotate(90deg) translate(-100%, 150%);
+  transform-origin: top left;
+  animation: hobbies-1-slide 1.5s forwards;
+  animation-delay: var(--delay-hobbies);
+}
+
+@keyframes hobbies-1-slide {
+  to {
+    transform: rotate(90deg) translate(0%, 150%);
+    opacity: 1;
+  }
+}
+
+.hobbies2 {
+  grid-area: hobbies-2;
+  transform: rotate(90deg);
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 0;
+
+  font-size: 1em;
+  line-height: 1em;
+
+  opacity: 0;
+  transform: rotate(90deg) translate(-180%, -200%);
+  transform-origin: top left;
+
+  animation: hobbies-2-slide 1.5s forwards;
+  animation-delay: var(--delay-hobbies);
+}
+
+@keyframes hobbies-2-slide {
+  to {
+    transform: rotate(90deg) translate(-80%, -200%);
+    opacity: 1;
+  }
+}
+
+/* #endregion HOBBIES*/
+
+@media (max-width: 1100px) {
+  .wordCloud {
+    justify-self: center;
+    transform: rotate(-45deg);
+  }
+
+  .myPhoto {
+    transform: none;
+  }
+
+  @keyframes curtain-cloud {
+  }
+
+  @keyframes curtain-photo {
+  }
+
+  @keyframes element-appear {
+    from {
+      transform: translate(0, 0) scale(0.5);
+      opacity: 0;
+    }
+  }
+  .hobbies1 span,
+  .hobbies2 span {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .wordCloud {
+    order: 3;
+    justify-self: center;
+    margin: auto;
+    transform: none;
+  }
+
+  .myPhoto {
+    order: 2;
+    margin: auto;
+    margin-top: 3em;
+    transform: none;
+  }
+
+  @keyframes curtain-cloud {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  @keyframes curtain-photo {
+    from {
+      transform: translateY(50%);
+    }
+  }
+
+  @keyframes element-appear {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .hello {
+    transform: translate(-40%, 80%);
+  }
+
+  @keyframes rotate-hello {
+  }
+
+  .myName {
+    transform: translate(0%, -20%);
+  }
+
+  @keyframes rotate-name {
+  }
+
+  .occupation {
+    transform: translate(-8%, -20%);
+  }
+
+  .skills {
+    opacity: 0;
+  }
+
+  @keyframes skills-down {
+  }
+
+  @keyframes skills-appear {
+  }
+
+  .hobbies1 span,
+  .hobbies2 span {
+    opacity: 0;
+  }
+
+  @keyframes hobbies-1-slide {
+  }
+
+  @keyframes hobbies-2-slide {
+  }
+}
