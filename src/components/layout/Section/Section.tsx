@@ -5,7 +5,7 @@ import type { ImageType } from "../../feature/Gallery/Gallery";
 import { ArrowLink } from "../../ui/ArrowLink/ArrowLink";
 import { Gallery } from "../../feature/Gallery/Gallery";
 
-import useInView from "@/hooks/useInView";
+import { useInView } from "@/hooks/useInView";
 
 interface SectionProps {
   title: string;

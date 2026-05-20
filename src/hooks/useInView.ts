@@ -42,4 +42,4 @@ function useInView(): UseInViewReturnType {
   return { ref, isInView, isScrollingUp };
 }
 
-export default useInView;
+export { useInView };

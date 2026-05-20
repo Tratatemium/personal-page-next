@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import section from "../SectionLayout.module.css";
 
-import useInView from "../../hooks/useInView";
+import { useInView } from "@/hooks/useInView";
 
 import { Gallery } from "@/components/feature/Gallery/Gallery";
 import { galleries } from "./Hobbies.data";
