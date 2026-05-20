@@ -1,4 +1,4 @@
-import type { ImageType } from "../Gallery";
+import type { ImageType } from "../Gallery/Gallery";
 import styles from "./Lightbox.module.css";
 
 import Image from "next/image";

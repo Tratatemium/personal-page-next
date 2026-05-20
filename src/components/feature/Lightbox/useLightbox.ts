@@ -1,4 +1,4 @@
-import type { ImageType } from "../Gallery";
+import type { ImageType } from "../Gallery/Gallery";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 

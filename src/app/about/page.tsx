@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-import { MyPhoto } from "@/components/MyPhoto";
+import { MyPhoto } from "@/components/ui/MyPhoto/MyPhoto";
 
 function About({ PhotoComponent = MyPhoto }) {
   return (

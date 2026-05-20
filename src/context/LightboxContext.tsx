@@ -1,10 +1,10 @@
 "use client";
-import type { ImageType } from "@/components/Gallery";
+import type { ImageType } from "@/components/feature/Gallery/Gallery";
 
 import { createContext, useContext } from "react";
 
-import { Lightbox } from "@/components/Lightbox/Lightbox";
-import { useLightbox } from "@/components/Lightbox/useLightbox";
+import { Lightbox } from "@/components/feature/Lightbox/Lightbox";
+import { useLightbox } from "@/components/feature/Lightbox/useLightbox";
 
 interface LightboxContextType {
   openLightbox: (images: ImageType[], index: number) => void;

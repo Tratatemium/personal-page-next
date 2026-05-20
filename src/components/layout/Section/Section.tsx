@@ -1,9 +1,9 @@
 "use client";
 
 import styles from "./Section.module.css";
-import type { ImageType } from "./Gallery";
-import { ArrowLink } from "./ArrowLink";
-import { Gallery } from "./Gallery";
+import type { ImageType } from "../../feature/Gallery/Gallery";
+import { ArrowLink } from "../../ui/ArrowLink/ArrowLink";
+import { Gallery } from "../../feature/Gallery/Gallery";
 
 import useInView from "@/hooks/useInView";
 

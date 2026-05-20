@@ -2,7 +2,7 @@ import styles from "./MyPhoto.module.css";
 
 import Image from "next/image";
 
-import myPhoto from "../assets/my-photo.png";
+import myPhoto from "@/assets/my-photo.png";
 
 interface MyPhotoProps {
   className?: string;

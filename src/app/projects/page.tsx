@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-import { Section } from "@/components/Section";
+import { Section } from "@/components/layout/Section/Section";
 import { client } from "@/sanity/client";
 
 type Project = {

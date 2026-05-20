@@ -5,10 +5,10 @@ import styles from "./clientLayout.module.css";
 import { usePathname } from "next/navigation";
 
 import { Providers } from "./providers";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { SkipLink } from "@/components/SkipLink";
+import { Navbar } from "@/components/layout/Navbar/Navbar";
+import { Footer } from "@/components/layout/Footer/Footer";
+import { ThemeToggle } from "@/components/feature/ThemeToggle/ThemeToggle";
+import { SkipLink } from "@/components/ui/SkipLink/SkipLink";
 
 export default function ClientLayout({
   children,

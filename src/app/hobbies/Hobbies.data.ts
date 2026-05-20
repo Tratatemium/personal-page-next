@@ -1,4 +1,4 @@
-import type { ImageType } from "../../components/Gallery.tsx";
+import type { ImageType } from "../../components/feature/Gallery/Gallery.js";
 
 import {
   Sourdough,

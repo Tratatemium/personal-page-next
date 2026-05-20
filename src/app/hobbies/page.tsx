@@ -4,18 +4,30 @@ import section from "../SectionLayout.module.css";
 
 import useInView from "../../hooks/useInView";
 
-import { Gallery } from "@/components/Gallery";
+import { Gallery } from "@/components/feature/Gallery/Gallery";
 import { galleries } from "./Hobbies.data";
 
 function Hobbies() {
-  const { ref: ref1, isInView: isInview1, isScrollingUp: isScrollingUp1 } =
-    useInView();
-  const { ref: ref2, isInView: isInview2, isScrollingUp: isScrollingUp2 } =
-    useInView();
-  const { ref: ref3, isInView: isInview3, isScrollingUp: isScrollingUp3 } =
-    useInView();
-  const { ref: ref4, isInView: isInview4, isScrollingUp: isScrollingUp4 } =
-    useInView();
+  const {
+    ref: ref1,
+    isInView: isInview1,
+    isScrollingUp: isScrollingUp1,
+  } = useInView();
+  const {
+    ref: ref2,
+    isInView: isInview2,
+    isScrollingUp: isScrollingUp2,
+  } = useInView();
+  const {
+    ref: ref3,
+    isInView: isInview3,
+    isScrollingUp: isScrollingUp3,
+  } = useInView();
+  const {
+    ref: ref4,
+    isInView: isInview4,
+    isScrollingUp: isScrollingUp4,
+  } = useInView();
 
   return (
     <>

@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-import { MyPhoto } from "@/components/MyPhoto";
+import { MyPhoto } from "@/components/ui/MyPhoto/MyPhoto";
 
 export default function Home({ PhotoComponent = MyPhoto }) {
   const skills = ["{", "HTML", "CSS", "TypeScript", "React", "Next.js", "}"];

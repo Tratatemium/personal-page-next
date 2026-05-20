@@ -1,4 +1,4 @@
-import type { ImageType } from "@/components/Gallery";
+import type { ImageType } from "@/components/feature/Gallery/Gallery";
 
 import {
   My2048game1,
