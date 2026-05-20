@@ -16,6 +16,12 @@
   margin-top: 2em;
 }
 
+.aboutContent {
+  grid-template-areas:
+    "title nav"
+    "img text";
+}
+
 @media (max-width: 1100px) {
   .content {
     grid-template-rows: 10em auto;
