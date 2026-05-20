@@ -3,7 +3,7 @@
   left: 8em;
   top: -4em;
   z-index: 99;
-  color: var(--main-color);
+  color: var(--color-foreground-primary);
   transition: 0.2s ease-in;
 }
 

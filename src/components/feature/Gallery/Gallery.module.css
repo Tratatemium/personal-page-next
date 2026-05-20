@@ -12,7 +12,7 @@
   height: 10em;
   width: auto;
   border-radius: 1em;
-  border: var(--main-color) 1px solid;
+  border: var(--color-foreground-primary) 1px solid;
   filter: grayscale();
   transition: transform 0.2s;
 }

@@ -5,7 +5,7 @@
   padding: 1em;
   gap: 1em;
   width: 100%;
-  background: color-mix(in srgb, var(--main-color) 20%, transparent);
+  background: var(--color-surface-subtle);
 }
 
 .footer :focus-visible {
@@ -21,7 +21,7 @@
 
 .svg {
   display: block;
-  fill: var(--main-color);
+  fill: var(--color-foreground-primary);
   width: 2em;
   transition:
     transform 0.2s,

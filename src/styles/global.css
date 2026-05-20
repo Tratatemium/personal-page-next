@@ -9,9 +9,9 @@ body {
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--color-surface-primary);
   font-family: var(--main-font);
-  color: var(--main-color);
+  color: var(--color-foreground-primary);
   display: grid;
 
   background-image: var(--background-img);

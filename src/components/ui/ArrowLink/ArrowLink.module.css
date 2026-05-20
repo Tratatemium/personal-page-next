@@ -1,13 +1,13 @@
 .arrowLink {
   text-decoration: underline;
-  color: var(--main-color);
+  color: var(--color-foreground-primary);
 }
 
 .arrowLink svg {
   width: 1.1em;
   height: 1.1em;
   vertical-align: middle;
-  fill: var(--main-color);
+  fill: var(--color-foreground-primary);
   margin-left: 0.2em;
 }
 

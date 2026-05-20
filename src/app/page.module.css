@@ -175,7 +175,7 @@
     border-right: var(--caret) transparent;
   }
   1% {
-    border-right: var(--caret) var(--main-color);
+    border-right: var(--caret) var(--color-foreground-primary);
   }
   13% {
     border-right: var(--caret) var(--accent-color-1);
@@ -198,16 +198,16 @@
     border-right: var(--caret) transparent;
   }
   1% {
-    border-right: var(--caret) var(--main-color);
+    border-right: var(--caret) var(--color-foreground-primary);
   }
   100% {
-    border-right: var(--caret) var(--main-color);
+    border-right: var(--caret) var(--color-foreground-primary);
   }
 }
 
 @keyframes blinking-caret {
   50% {
-    border-right: var(--caret) var(--main-color);
+    border-right: var(--caret) var(--color-foreground-primary);
   }
 }
 

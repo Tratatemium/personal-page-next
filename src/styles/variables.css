@@ -5,11 +5,19 @@
     var(--font-fira-sans), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   --background-img: url(../assets/background.png);
-  --background-color: light-dark(#e7dfdc, #0a0a0a);
-  --main-color: light-dark(#2d2d2d, #eeeeee);
+
+  --color-foreground-primary: light-dark(#2d2d2d, #eeeeee);
+
+  --color-surface-primary: light-dark(#e7dfdc, #0a0a0a);
+  --color-surface-subtle: light-dark(
+    color-mix(in srgb, var(--color-foreground-primary) 20%, transparent),
+    color-mix(in srgb, var(--color-foreground-primary) 5%, transparent)
+  );
+
   --accent-color-1: light-dark(#ec3a04, #ff5f1f);
   --accent-color-2: light-dark(#188d82, #1bf0d7);
   --accent-color-3: light-dark(#337f22, #39ff3f);
+
   --footer-focus-color: light-dark(#195115, var(--accent-color-3));
   --focus-color: light-dark(var(--accent-color-3), var(--accent-color-3));
 
