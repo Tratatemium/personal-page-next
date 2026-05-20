@@ -21,7 +21,6 @@ export default function ClientLayout({
     <Providers>
       <div className={styles.app}>
         <SkipLink mainId={"main"} />
-        <ThemeToggle />
         <main
           className={`${styles.content} ${isAboutPage ? styles.aboutContent : ""}`}
           id="main"
