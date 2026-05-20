@@ -1,0 +1,45 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+  width: 100%;
+  background: color-mix(in srgb, var(--main-color) 20%, transparent);
+}
+
+.footer :focus-visible {
+  outline-color: var(--footer-focus-color);
+}
+
+.social {
+  display: flex;
+  width: fit-content;
+  gap: 1.5em;
+  margin: auto;
+}
+
+.svg {
+  display: block;
+  fill: var(--main-color);
+  width: 2em;
+  transition:
+    transform 0.2s,
+    fill 0.2s;
+}
+
+.svg:hover {
+  fill: var(--accent-color-2);
+  transform: scale(1.2);
+}
+
+.copyright {
+  font-size: 0.8em;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .svg {
+    width: 3.7em;
+  }
+}
