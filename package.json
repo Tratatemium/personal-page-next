@@ -1,5 +1,8 @@
 {
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
     "dev:web": "pnpm --filter web dev",
     "dev:studio": "pnpm --filter studio dev"
