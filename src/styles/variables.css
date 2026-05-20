@@ -1,15 +1,17 @@
 :root {
+  color-scheme: light dark;
 
-  --main-font: var(--font-fira-sans), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --main-font:
+    var(--font-fira-sans), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   --background-img: url(../assets/background.png);
-  --background-color: #e7dfdc;
-  --main-color: #2d2d2d;
-  --accent-color-1: #ec3a04;
-  --accent-color-2: #188d82;
-  --accent-color-3: #337f22;
-  --footer-focus-color: #195115;
-  --focus-color: var(--accent-color-3);
+  --background-color: light-dark(#e7dfdc, #0a0a0a);
+  --main-color: light-dark(#2d2d2d, #eeeeee);
+  --accent-color-1: light-dark(#ec3a04, #ff5f1f);
+  --accent-color-2: light-dark(#188d82, #1bf0d7);
+  --accent-color-3: light-dark(#337f22, #39ff3f);
+  --footer-focus-color: light-dark(#195115, var(--accent-color-3));
+  --focus-color: light-dark(var(--accent-color-3), var(--accent-color-3));
 
   --curtain-center-distance: 5em;
 
@@ -41,15 +43,10 @@
   --delay-about-me: 0.3s;
 }
 
-:root[data-theme="dark"] {
-  --background-img: url(../assets/background-night.png);
-  --background-color: #0a0a0a;
-  --main-color: #eeeeee;
-  --accent-color-1: #ff5f1f;
-  --accent-color-2: #1bf0d7;
-  --accent-color-3: #39ff3f;
-  --focus-color: var(--accent-color-3);
-  --footer-focus-color: var(--accent-color-3);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-img: url(../assets/background-night.png);
+  }
 }
 
 @media (max-width: 1100px) {
