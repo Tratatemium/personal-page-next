@@ -83,6 +83,12 @@ h1 {
   opacity: 0;
 }
 
+@media (max-width: 1000px) {
+  body {
+    background-size: 700px;
+  }
+}
+
 @media (max-width: 600px) {
   html {
     font-size: clamp(0.4rem, 0.4rem + 0.5vw, 2rem);
