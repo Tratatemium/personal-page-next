@@ -6,7 +6,6 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import { Image } from "next-sanity/image";
 
 import { Gallery } from "@/components/feature/Gallery/Gallery";
-import { useInView } from "@/hooks/useInView";
 import { urlFor } from "@/lib/sanity/client";
 import type {
   Gallery as GalleryType,
@@ -66,12 +65,8 @@ const components: PortableTextComponents = {
 };
 
 function Section({ data, variant }: SectionProps) {
-  const { ref, isInView, isScrollingUp } = useInView();
   return (
-    <section
-      ref={ref}
-      className={`${styles.section} ${styles[variant]} ${isInView ? styles.show : isScrollingUp ? styles.hideUp : styles.hideDown}`}
-    >
+    <section className={`${styles.section} ${styles[variant]} animate-in`}>
       <h2 className={styles.title}>{data.title}</h2>
 
       {data.body && <PortableText value={data.body} components={components} />}
