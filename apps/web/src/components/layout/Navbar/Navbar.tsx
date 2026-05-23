@@ -1,22 +1,22 @@
 import styles from "./Navbar.module.css";
 import Link from "next/link";
 
+const links = [
+  { text: "[home]", href: "/" },
+  { text: "[about]", href: "/about" },
+  { text: "[my projects]", href: "/projects" },
+  { text: "[my hobbies]", href: "/hobbies" },
+];
+
 function Navbar() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        <li>
-          <Link href="/">[home]</Link>
-        </li>
-        <li>
-          <Link href="/about">[about]</Link>
-        </li>
-        <li>
-          <Link href="/projects">[my projects]</Link>
-        </li>
-        <li>
-          <Link href="/hobbies">[my hobbies]</Link>
-        </li>
+        {links.map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.text}
+          </Link>
+        ))}
       </ul>
     </nav>
   );
