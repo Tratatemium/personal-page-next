@@ -1,4 +1,6 @@
 .title {
+  text-align: center;
+  align-self: center;
   text-shadow: 2px 2px 2px rgb(from var(--accent-color-2) r g b / 0.6);
 }
 
@@ -12,4 +14,13 @@
   margin-top: 5em;
   margin-bottom: 5em;
   gap: 5em;
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-top: 2em;
+  }
+  .content {
+    font-size: clamp(0.8rem, 0.8rem + 1.5vw, 2rem);
+  }
 }

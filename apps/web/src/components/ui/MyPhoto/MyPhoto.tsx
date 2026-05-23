@@ -10,7 +10,7 @@ interface MyPhotoProps {
 
 function MyPhoto({ className }: MyPhotoProps) {
   return (
-    <section className={`${styles.myPhoto}${className ? ` ${className}` : ""}`}>
+    <section className={`${styles.myPhoto} ${className ?? ""}`}>
       <Image
         src={myPhoto}
         alt="Vladislav Zhuravskii - Front-end Developer"

@@ -2,12 +2,12 @@ import styles from "./page.module.css";
 
 import { MyPhoto } from "@/components/ui/MyPhoto/MyPhoto";
 
-function About({ PhotoComponent = MyPhoto }) {
+function About() {
   return (
     <>
       <h1 className={styles.title}>&lt;About me&gt;</h1>
 
-      <PhotoComponent className={styles.myPhoto} />
+      <MyPhoto className={styles.myPhoto} />
 
       <section className={styles.text}>
         <p>
