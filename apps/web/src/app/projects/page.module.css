@@ -2,12 +2,6 @@
   text-shadow: 2px 2px 2px rgb(from var(--accent-color-2) r g b / 0.6);
 }
 
-.project-name {
-  font-size: 1em;
-  margin: auto;
-  font-weight: bold;
-}
-
 .content {
   grid-row: 2;
   grid-column: 1 / -1;
