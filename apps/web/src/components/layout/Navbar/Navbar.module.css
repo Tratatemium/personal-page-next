@@ -33,7 +33,7 @@
   .nav {
     justify-content: center;
     transform: none;
-    font-size: 1.3em;
     margin-top: 0em;
+    font-size: clamp(0.8rem, 0.8rem + 1.5vw, 2rem);
   }
 }

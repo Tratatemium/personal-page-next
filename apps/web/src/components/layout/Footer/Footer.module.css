@@ -46,4 +46,8 @@
   .svg {
     width: 3.7em;
   }
+
+  .footer {
+    font-size: clamp(0.8rem, 0.8rem + 1.5vw, 2rem);
+  }
 }
