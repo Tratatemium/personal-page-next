@@ -1,8 +1,14 @@
+.wraper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
 .imageButton {
-  border-radius: var(--spacing-md);
+  border-radius: 1em;
   overflow: hidden;
   cursor: pointer;
-  background-color: var(--color-surface-subtle);
   border: 2px solid transparent;
   padding: 0;
   transition: all 0.2s ease;
@@ -10,8 +16,9 @@
 
 .imageContainer {
   position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  max-width: 10em;
+  max-height: 10em;
+  aspect-ratio: initial;
   border-radius: inherit;
   overflow: hidden;
 }
@@ -26,16 +33,10 @@
 }
 
 .imageButton:hover {
-  border: 2px solid var(--color-border-default-hover);
-  box-shadow: 0 0 7px var(--color-border-default-hover);
+  border: 2px solid var(--accent-color-1);
+  box-shadow: 0 0 7px var(--accent-color-1);
 }
 
 .imageButton:hover img {
   transform: scale(1.04);
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
 }

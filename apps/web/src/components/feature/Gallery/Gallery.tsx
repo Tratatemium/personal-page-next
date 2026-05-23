@@ -23,7 +23,7 @@ function Gallery({ rawImages }: GalleryProps) {
 
   return (
     <>
-      <div className={styles.grid}>
+      <div className={styles.wraper}>
         {rawImages?.map((img, i) => (
           <button
             key={img._key}

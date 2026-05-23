@@ -1,3 +1,5 @@
+"use client";
+
 import type { PortableTextComponents } from "@portabletext/react";
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
