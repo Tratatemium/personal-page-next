@@ -1,13 +1,13 @@
 "use client";
 
-import { ThemeProvider } from "@/context/ThemeContext";
+import { AnimationProvider } from "@/components/providers/AnimationProvider/AnimationProvider";
 
 interface ProvidersProps {
   children: React.ReactNode;
 }
 
 function Providers({ children }: ProvidersProps) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return <AnimationProvider>{children}</AnimationProvider>;
 }
 
 export { Providers };

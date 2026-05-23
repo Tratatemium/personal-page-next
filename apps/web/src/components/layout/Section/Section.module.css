@@ -12,7 +12,6 @@
   align-items: flex-start;
   justify-content: center;
   gap: 1em;
-  opacity: 0;
   width: 100%;
   max-width: 90ch;
   transition: all 0.8s ease-out;
@@ -40,6 +39,7 @@
 
 .section ul {
   margin: 0;
+  padding-left: 2em;
 }
 
 .links {
@@ -55,22 +55,8 @@
   align-self: center;
 }
 
-.hideDown {
-  transform: translateY(30px);
-}
-
-.hideUp {
-  transform: translateY(-30px);
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (max-width: 600px) {
   .section p {
-    font-size: 1.2em;
     width: fit-content;
   }
   .title {
