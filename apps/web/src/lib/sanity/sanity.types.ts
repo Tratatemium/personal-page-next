@@ -219,3 +219,64 @@ export type AllSanitySchemaTypes =
   | SanityAssetSourceData
   | SanityImageAsset
   | Geopoint;
+
+// Source: ../web/src/sanity/queries.ts
+// Variable: PROJECTS_QUERY
+// Query: *[_type == "project" && defined(slug.current)] | order(orderRank)
+export type PROJECTS_QUERY_RESULT = Array<{
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  orderRank?: string;
+  title?: string;
+  slug?: Slug;
+  body?: Array<
+    | ({
+        _key: string;
+      } & Gallery)
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?: "blockquote" | "h3" | "h4" | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          blank?: boolean;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+        _key: string;
+      }
+  >;
+  links?: Array<{
+    href?: string;
+    text?: string;
+    svgType?: "github" | "globe";
+    _key: string;
+  }>;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    '\n    *[_type == "project" && defined(slug.current)] | order(orderRank)\n': PROJECTS_QUERY_RESULT;
+  }
+}
