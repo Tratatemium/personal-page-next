@@ -17,21 +17,20 @@
   padding: 0;
 }
 
-.list a {
+.link {
   color: var(--color-foreground-primary);
   font-size: 1em;
   transition: all 0.2s eese;
 }
 
-.list a:hover,
-.list a:focus-within {
+.link:hover,
+.link:focus-within {
   color: var(--accent-color-1);
   transform: scale(1.1);
 }
 
 @media (max-width: 600px) {
   .nav {
-    order: 1;
     justify-content: center;
     transform: none;
     font-size: 1.3em;

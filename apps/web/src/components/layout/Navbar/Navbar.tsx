@@ -13,7 +13,7 @@ function Navbar() {
     <nav className={styles.nav}>
       <ul className={styles.list}>
         {links.map((link) => (
-          <Link key={link.href} href={link.href}>
+          <Link key={link.href} href={link.href} className={styles.link}>
             {link.text}
           </Link>
         ))}
