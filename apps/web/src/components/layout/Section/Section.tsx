@@ -5,13 +5,16 @@ import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { Image } from "next-sanity/image";
 
-import styles from "./Section.module.css";
-import { ArrowLink } from "../../ui/ArrowLink/ArrowLink";
-
+import { Gallery } from "@/components/feature/Gallery/Gallery";
 import { useInView } from "@/hooks/useInView";
-
-import type { PROJECTS_QUERY_RESULT } from "@/lib/sanity/sanity.types";
 import { urlFor } from "@/lib/sanity/client";
+import type {
+  Gallery as GalleryType,
+  PROJECTS_QUERY_RESULT,
+} from "@/lib/sanity/sanity.types";
+
+import { ArrowLink } from "../../ui/ArrowLink/ArrowLink";
+import styles from "./Section.module.css";
 
 type Project = PROJECTS_QUERY_RESULT[number];
 interface SectionProps {
@@ -41,9 +44,9 @@ const components: PortableTextComponents = {
         </div>
       );
     },
-    // gallery: ({ value }: { value: Gallery }) => (
-    //   <BlogGallery rawImages={value.images} />
-    // ),
+    gallery: ({ value }: { value: GalleryType }) => (
+      <Gallery rawImages={value.images} className={styles.gallery} />
+    ),
   },
   marks: {
     link: ({ children, value }) => (
@@ -79,7 +82,6 @@ function Section({ project }: SectionProps) {
           ))}
         </div>
       )}
-      {/* {images && <Gallery images={images}></Gallery>} */}
     </section>
   );
 }
