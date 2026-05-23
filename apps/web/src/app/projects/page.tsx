@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 
 import { Section } from "@/components/layout/Section/Section";
-import { client } from "@/sanity/client";
+import { client } from "@/lib/sanity/client";
 
 type Project = {
   _id: string;
