@@ -11,14 +11,17 @@ import { urlFor } from "@/lib/sanity/client";
 import type {
   Gallery as GalleryType,
   PROJECTS_QUERY_RESULT,
+  HOBBIES_QUERY_RESULT,
 } from "@/lib/sanity/sanity.types";
 
 import { ArrowLink } from "../../ui/ArrowLink/ArrowLink";
 import styles from "./Section.module.css";
 
 type Project = PROJECTS_QUERY_RESULT[number];
+type Hobby = HOBBIES_QUERY_RESULT[number];
 interface SectionProps {
-  project: Project;
+  data: Project | Hobby;
+  variant: "project" | "hobby";
 }
 
 // --- Portable Text components ---
@@ -62,22 +65,20 @@ const components: PortableTextComponents = {
   },
 };
 
-function Section({ project }: SectionProps) {
+function Section({ data, variant }: SectionProps) {
   const { ref, isInView, isScrollingUp } = useInView();
   return (
     <section
       ref={ref}
-      className={`${styles.section} ${isInView ? styles.show : isScrollingUp ? styles.hideUp : styles.hideDown}`}
+      className={`${styles.section} ${styles[variant]} ${isInView ? styles.show : isScrollingUp ? styles.hideUp : styles.hideDown}`}
     >
-      <h2 className={styles.title}>{project.title}</h2>
+      <h2 className={styles.title}>{data.title}</h2>
 
-      {project.body && (
-        <PortableText value={project.body} components={components} />
-      )}
+      {data.body && <PortableText value={data.body} components={components} />}
 
-      {project.links && (
+      {data.links && (
         <div className={styles.links}>
-          {project.links.map((link) => (
+          {data.links.map((link) => (
             <ArrowLink key={link._key} link={link} />
           ))}
         </div>

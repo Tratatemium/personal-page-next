@@ -1,3 +1,11 @@
+.project {
+  --accent-color: var(--accent-color-2);
+}
+
+.hobby {
+  --accent-color: var(--accent-color-3);
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -11,18 +19,19 @@
 }
 
 .title {
-  text-shadow: 2px 2px 2px rgb(from var(--accent-color-2) r g b / 0.6);
+  text-shadow: 2px 2px 2px rgb(from var(--accent-color) r g b / 0.6);
   max-width: 50ch;
-  margin: 0;
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 
 .section strong {
-  color: var(--accent-color-2);
+  color: var(--accent-color);
 }
 
 .section h3,
 .section h4 {
-  text-shadow: 2px 2px 2px rgb(from var(--accent-color-2) r g b / 0.6);
+  text-shadow: 2px 2px 2px rgb(from var(--accent-color) r g b / 0.6);
 }
 
 .section p {

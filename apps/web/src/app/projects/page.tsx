@@ -12,7 +12,7 @@ async function Projects() {
       {projects && (
         <div className={styles.content}>
           {projects.map((project) => (
-            <Section key={project._id} project={project} />
+            <Section key={project._id} data={project} variant="project" />
           ))}
         </div>
       )}
