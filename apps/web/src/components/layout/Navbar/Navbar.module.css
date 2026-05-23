@@ -20,26 +20,13 @@
 .list a {
   color: var(--color-foreground-primary);
   font-size: 1em;
+  transition: all 0.2s eese;
 }
 
 .list a:hover,
 .list a:focus-within {
   color: var(--accent-color-1);
-  font-weight: bolder;
-}
-
-.skip-link {
-  position: absolute;
-  left: 8em;
-  top: -4em;
-  z-index: 99;
-  color: var(--color-foreground-primary);
-}
-
-a.skip-link:focus-within {
-  top: 2em;
-  color: var(--accent-color-1);
-  font-weight: bolder;
+  transform: scale(1.1);
 }
 
 @media (max-width: 600px) {

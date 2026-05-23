@@ -1,27 +1,47 @@
-.arrowLink {
-  text-decoration: underline;
+/* .arrowLink {
+  display: flex;
+  flex-direction: column;
+} */
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2em;
   color: var(--color-foreground-primary);
+  transition: all 0.2s ease;
 }
 
 .arrowLink svg {
-  width: 1.1em;
-  height: 1.1em;
+  width: 1em;
+  height: 1em;
   vertical-align: middle;
   fill: var(--color-foreground-primary);
   margin-left: 0.2em;
+  transition: all 0.2s ease;
 }
 
-.arrowLink::after {
-  content: "↗";
-  font-size: 1em;
-}
-
-.arrowLink:hover,
-.arrowLink:focus-visible {
+.content:hover,
+.content:focus-visible {
   color: var(--accent-color-1);
 }
 
 .arrowLink:hover svg,
 .arrowLink:focus-visible svg {
   fill: var(--accent-color-1);
+}
+
+.arrowLink::after {
+  content: "";
+  height: 2px;
+  display: block;
+  width: 0%;
+  background-color: var(--accent-color-1);
+  transition: width 0.2s ease;
+  margin-inline: auto;
+}
+
+.arrowLink:hover::after,
+.arrowLink:focus-visible::after {
+  width: 100%;
 }
