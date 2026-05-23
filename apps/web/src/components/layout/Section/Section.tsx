@@ -45,7 +45,7 @@ const components: PortableTextComponents = {
       );
     },
     gallery: ({ value }: { value: GalleryType }) => (
-      <Gallery rawImages={value.images} />
+      <Gallery rawImages={value.images} className={styles.gallery} />
     ),
   },
   marks: {

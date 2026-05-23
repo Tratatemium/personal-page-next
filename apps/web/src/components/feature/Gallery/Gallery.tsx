@@ -11,9 +11,10 @@ import { urlFor } from "@/lib/sanity/client";
 import styles from "./Gallery.module.css";
 interface GalleryProps {
   rawImages: Gallery["images"];
+  className?: string;
 }
 
-function Gallery({ rawImages }: GalleryProps) {
+function Gallery({ rawImages, className }: GalleryProps) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -23,7 +24,7 @@ function Gallery({ rawImages }: GalleryProps) {
 
   return (
     <>
-      <div className={styles.wraper}>
+      <div className={`${styles.wraper} ${className ?? ""}`}>
         {rawImages?.map((img, i) => (
           <button
             key={img._key}
