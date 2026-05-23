@@ -5,13 +5,9 @@
   ],
   "scripts": {
     "dev:web": "pnpm --filter web dev",
-<<<<<<< HEAD
     "dev:studio": "pnpm --filter studio dev",
     "deploy:studio": "pnpm --filter studio run deploy",
     "typegen": "pnpm --filter studio typegen"
-=======
-    "dev:studio": "pnpm --filter studio dev"
->>>>>>> origin/main
   },
   "dependencies": {
     "@sanity/orderable-document-list": "^1.5.1",
