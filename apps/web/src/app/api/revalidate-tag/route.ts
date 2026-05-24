@@ -20,8 +20,6 @@ export async function POST(req: NextRequest) {
       true,
     );
 
-    console.log("Secret length:", process.env.SANITY_REVALIDATE_SECRET?.length);
-
     if (isValidSignature === null) {
       return new Response(JSON.stringify({ message: "No secret provided" }), {
         status: 401,
