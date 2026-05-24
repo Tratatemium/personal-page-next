@@ -20,8 +20,11 @@ export async function POST(req: NextRequest) {
       true,
     );
 
-    console.log(process.env.SANITY_REVALIDATE_SECRET);
-    console.log(req);
+    if (isValidSignature === null) {
+      return new Response(JSON.stringify({ message: "No secret provided" }), {
+        status: 401,
+      });
+    }
 
     if (!isValidSignature) {
       return new Response(JSON.stringify({ message: "Invalid signature" }), {
