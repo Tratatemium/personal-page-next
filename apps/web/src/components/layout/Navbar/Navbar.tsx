@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css";
-import Link from "next/link";
+import { NavLink } from "../NavLink/NavLink";
 
 const links = [
   { text: "[home]", href: "/" },
@@ -13,9 +13,9 @@ function Navbar() {
     <nav className={styles.nav}>
       <ul className={styles.list}>
         {links.map((link) => (
-          <Link key={link.href} href={link.href} className={styles.link}>
+          <NavLink key={link.href} href={link.href}>
             {link.text}
-          </Link>
+          </NavLink>
         ))}
       </ul>
     </nav>
